@@ -1,28 +1,31 @@
-import machine
-import micropython
+from machine import Pin
+from machine import Signal
+from machine import ADC
 import zcoap
-import ujson
 import time
+import ujson
 
-message = 'OK'
-path = 'thing/' + zcoap.eui64()
-reported = ujson.dumps({'state':{ 'reported':{ 'message':message } } })
+if __name__ == '__main__':
+    path = 'thing/' + zcoap.eui64()
+    reported = {'state':{'reported':{}}}
 
-pin = machine.Pin(('GPIO_1', 7), machine.Pin.OUT)
-led1 = machine.Signal(pin, invert=True)
-led1.off()
+    addr = zcoap.gw_addr()
+    port = 5683
+    cli = zcoap.client((addr, port))
 
-addr = zcoap.gw_addr()
-port = 5683
-cli = zcoap.client((addr, port))
+    pin = Pin(('GPIO_1', 7), Pin.OUT)
+    led1 = Signal(pin, invert=True)
+    led1.off()
 
-while True:
-    cli.request_post(path, reported)
-    received = cli.request_get(path)
+    while True:
+        reported['state']['reported']['message'] = 'OK'
+        cli.request_post(path, ujson.dumps(reported))
 
-    if received:
-        led1.on()
+        received = cli.request_get(path)
 
-    time.sleep(5)
+        if received:
+            led1.on()
 
-cli.close()
+        time.sleep(5)
+
+    cli.close()
