@@ -4,9 +4,14 @@ import time
 import ujson
 
 def light_sensor():
-    ain1 = ADC(0)
-    raw = ain1.read()
-    v = (raw / 4096) * 0.6 * 6
+    ADC_REF = 0.6
+    ADC_RESOLUTION=4096 #12bit
+    ain = ADC(0)
+    ain.gain(ain.GAIN_1_6) #gain set to 1/6
+
+    raw = ain.read()
+    v = (raw / ADC_RESOLUTION) * ADC_REF * 6
+
     return v
 
 if __name__ == '__main__':

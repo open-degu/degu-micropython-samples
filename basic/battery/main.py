@@ -7,9 +7,13 @@ def battery_voltage():
     R6 = 68
     R8 = 100
 
-    ain1 = ADC(1)
-    raw = ain1.read()
-    vin = (raw / 4096) * 0.6 * 6
+    ADC_REF = 0.6
+    ADC_RESOLUTION=4096 #12bit
+    ain = ADC(1)
+    ain.gain(ain.GAIN_1_6) #gain set to 1/6
+
+    raw = ain.read()
+    vin = (raw / ADC_RESOLUTION) * ADC_REF * 6
 
     v = vin * ((R6 + R8) / R8)
     return v

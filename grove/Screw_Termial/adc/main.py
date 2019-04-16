@@ -4,15 +4,23 @@ import time
 import ujson
 
 def d1_voltage():
-    ain1 = ADC(0)
-    raw = ain1.read()
-    v = (raw / 4096) * 0.6 * 6
+    ADC_REF = 0.6
+    ADC_RESOLUTION=4096 #12bit
+    ain = ADC(0)
+    ain.gain(ain.GAIN_1_6) #gain set to 1/6
+
+    raw = ain.read()
+    v = (raw / ADC_RESOLUTION) * ADC_REF * 6
     return v
 
 def d2_voltage():
-    ain1 = ADC(5)
-    raw = ain1.read()
-    v = (raw / 4096) * 0.6 * 6
+    ADC_REF = 0.6
+    ADC_RESOLUTION=4096 #12bit
+    ain = ADC(5)
+    ain.gain(ain.GAIN_1_6) #gain set to 1/6
+
+    raw = ain.read()
+    v = (raw / ADC_RESOLUTION) * ADC_REF * 6
     return v
 
 if __name__ == '__main__':
