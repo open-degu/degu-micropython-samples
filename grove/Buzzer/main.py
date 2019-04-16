@@ -1,6 +1,5 @@
 from machine import Pin
 from machine import Signal
-from machine import ADC
 import zcoap
 import time
 import ujson
