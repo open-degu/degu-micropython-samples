@@ -5,34 +5,27 @@ Degu MicroPython Samples
 
 This repository has some MicroPython sample codes for Degu and Seeed Grove sensors on it.
 
-Usage
---------
-You can try them with just following 3 steps:
+このレポジトリには、DeguでGroveセンサーを動かすためのサンプルコードが含まれています。
 
-1. Connect Degu to your PC
-
-1. Copy main.py you selected to USB mass storage of your Degu.
-
-1. Reboot your Degu. (To press the reset button or turn off/on the power)
-
-That's it!
-
-つかい方
---------
-次の3ステップで試すことができます。
-
-1. DeguをPCに接続してください
-1. 好きなmain.pyをDeguのUSBマスストレージにコピーしてください
-1. Deguを再起動してください(リセットボタンを押すか電源を入れなおす)
-
-What is Degu?
+Requirements / 要件
 --------
 
-Degu is an open-source sensor device platform based on a low-power MCU and the Grove sensors connection interfaces. Degu can connect gateway by Openthread stacks and it on Zephyr OS. For programing user specific behaviour, it impremented micropython interpreter for execute user application.
+These sample codes are compatible with Degu firmware `v0.9.1` or later. [Update](https://open-degu.github.io/user_manual/20_software_update/) if your degu firmware version is old.
 
-* More informations about Degu, visit degu web site(https://open-degu.com/)
+このサンプルコードに対応しているDeguファームウェアのバージョンは`v0.9.1`以降です。お使いのDeguファームウェアバージョンが古い場合は、[アップデートしてください。](https://open-degu.github.io/user_manual/20_software_update/)
 
-* Technical resources for Degu on github project repositorys(https://github.com/open-degu)
+Usage / 使い方
+--------
+
+You can try them with just following 3 steps. / 次の3ステップで試すことができます。
+
+1. Connect Degu to your PC. / DeguをPCに接続してください。
+
+1. Copy main.py you selected to USB mass storage of your Degu. / 好きなmain.pyをDeguのUSBマスストレージにコピーしてください。
+
+1. Reboot your Degu. (To press the reset button or turn off/on the power) / Deguを再起動してください(リセットボタンを押すか電源を入れなおす)
+
+That's it! / これだけ!
 
 Samples / サンプルコード
 --------
@@ -56,3 +49,12 @@ Samples / サンプルコード
 |Screw_Terminal/dio|Switch the digital output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとデジタル出力が切り替わり、その状態をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|DIO1|
 |Screw_Terminal/adc|Transfer voltages of analog input to device-shadow/アナログ入力電圧値をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|AIN1|
 |Light_sensor|Transfer the value of sensor to device-shadow/光センサーの値をデバイスシャドウに送信します|[Grove - 光センサー v1.2](https://www.seeedstudio.com/Grove-Light-Sensor-v1-2-p-2727.html)|AIN1|
+
+What is Degu?
+--------
+
+Degu is an open-source sensor device platform based on a low-power MCU and the Grove sensors connection interfaces. Degu can connect gateway by Openthread stacks and it on Zephyr OS. For programing user specific behaviour, it impremented micropython interpreter for execute user application.
+
+* More informations about Degu, visit degu web site(https://open-degu.com/)
+
+* Technical resources for Degu on github project repositorys(https://github.com/open-degu)
