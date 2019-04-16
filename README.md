@@ -13,9 +13,17 @@ You can try them with just following 3 steps:
 
 1. Copy main.py you selected to USB mass storage of your Degu.
 
-1. Reboot your Degu.
+1. Reboot your Degu. (To press the reset button or turn off/on the power)
 
 That's it!
+
+つかい方
+--------
+次の3ステップで試すことができます。
+
+1. DeguをPCに接続してください
+1. 好きなmain.pyをDeguのUSBマスストレージにコピーしてください
+1. Deguを再起動してください(リセットボタンを押すか電源を入れなおす)
 
 What is Degu?
 --------
