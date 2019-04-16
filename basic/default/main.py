@@ -19,6 +19,7 @@ if __name__ == '__main__':
 
     while True:
         reported['state']['reported']['message'] = 'OK'
+        print(ujson.dumps(reported))
         cli.request_post(path, ujson.dumps(reported))
 
         received = cli.request_get(path)

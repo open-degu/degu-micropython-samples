@@ -166,6 +166,7 @@ def main():
         reported['state']['reported']['temp'] = bma400.temprature_read()
         reported['state']['reported']['axis'] = bma400.accel_axis_read()
 
+        print(ujson.dumps(reported))
         cli.request_post(path, ujson.dumps(reported))
         time.sleep(5)
 
