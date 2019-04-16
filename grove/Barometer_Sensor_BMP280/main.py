@@ -191,6 +191,7 @@ def main():
         reported['state']['reported']['temp'] = bmp.values[0]
         reported['state']['reported']['pres'] = bmp.values[1]
 
+        print(ujson.dumps(reported))
         cli.request_post(path, ujson.dumps(reported))
         time.sleep(60)
 
