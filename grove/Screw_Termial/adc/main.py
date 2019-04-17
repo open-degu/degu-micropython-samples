@@ -3,19 +3,24 @@ import zcoap
 import time
 import ujson
 
-def battery_voltage():
-    R6 = 68
-    R8 = 100
-
+def d1_voltage():
     ADC_REF = 0.6
     ADC_RESOLUTION=4096 #12bit
-    ain = ADC(1)
+    ain = ADC(0)
     ain.gain(ain.GAIN_1_6) #gain set to 1/6
 
     raw = ain.read()
-    vin = (raw / ADC_RESOLUTION) * ADC_REF * 6
+    v = (raw / ADC_RESOLUTION) * ADC_REF * 6
+    return v
 
-    v = vin * ((R6 + R8) / R8)
+def d2_voltage():
+    ADC_REF = 0.6
+    ADC_RESOLUTION=4096 #12bit
+    ain = ADC(5)
+    ain.gain(ain.GAIN_1_6) #gain set to 1/6
+
+    raw = ain.read()
+    v = (raw / ADC_RESOLUTION) * ADC_REF * 6
     return v
 
 if __name__ == '__main__':
@@ -27,10 +32,12 @@ if __name__ == '__main__':
     cli = zcoap.client((addr, port))
 
     while True:
-        reported['state']['reported']['battery'] = battery_voltage()
+        d1 = round(d1_voltage(), 2)
+        d2 = round(d2_voltage(), 2)
+        reported['state']['reported']['terminal'] = {'d1':d1, 'd2':d2}
 
         print(ujson.dumps(reported))
         cli.request_post(path, ujson.dumps(reported))
-        time.sleep(60)
+        time.sleep(1)
 
     cli.close()

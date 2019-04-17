@@ -192,6 +192,7 @@ def main():
         reported['state']['reported']['pres'] = bme.values[1]
         reported['state']['reported']['humid'] = bme.values[2]
 
+        print(ujson.dumps(reported))
         cli.request_post(path, ujson.dumps(reported))
         time.sleep(60)
 
