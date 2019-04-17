@@ -44,6 +44,7 @@ Samples / サンプルコード
 |Barometer_Sensor_BME280|Transfer temperature, humidity and pressure to device-shadow/温湿度気圧センサーの温湿度と気圧をデバイスシャドウに送信します|[Grove - 温湿度気圧センサー(BME280)](https://www.seeedstudio.com/Grove-Temp-Humi-Barometer-Sensor-BME280-p-2653.html)|I2C|
 |Barometer_Sensor_BMP280|Transfer temperature and pressure to device-shadow/気圧センサーの温度と気圧をデバイスシャドウに送信します|[Grove - 気圧センサー(BMP280)](https://www.seeedstudio.com/Grove-Barometer-Sensor-BMP28-p-2652.html)|I2C|
 |3-Axis_Digital_Accelerometer_16g_BMA400|Transfer value of acceleromete and temperature to device-shadow/加速度センサーの値と温度をデバイスシャドウに送信します|[Grove - 3軸デジタル加速度センサー(±16g)超低消費電力(BMA400)](https://www.seeedstudio.com/Grove-3-Axis-Digital-Accelerometer-16g-Ultra-low-Power-BMA400-p-3201.html)|I2C|
+|Air_Quality_Sensor|Measure air quality and transfer the value to device-shadow/周辺の空気の汚染度を計測し、デバイスシャドウに送信します。|[Grove - 空気品質センサー](http://wiki.seeedstudio.com/Grove-Air_Quality_Sensor_v1.3/)|I2C|
 |Buzzer|Sound the buzzer, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとブザーが鳴り、その状態をデバイスシャドウに送信します|[Grove - ブザー](https://www.seeedstudio.com/Grove-Buzzer-p-768.html)|DIO1|
 |Relay|Switch on the relay output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとリレー出力がONになり、その状態をデバイスシャドウに送信します|[Grove - リレー](https://www.seeedstudio.com/Grove-Relay-p-769.html)|DIO1|
 |Screw_Terminal/dio|Switch the digital output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとデジタル出力が切り替わり、その状態をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|DIO1|
