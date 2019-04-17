@@ -47,6 +47,7 @@ Samples / サンプルコード
 |Buzzer|Sound the buzzer, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとブザーが鳴り、その状態をデバイスシャドウに送信します|[Grove - ブザー](https://www.seeedstudio.com/Grove-Buzzer-p-768.html)|DIO1|
 |Relay|Switch on the relay output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとリレー出力がONになり、その状態をデバイスシャドウに送信します|[Grove - リレー](https://www.seeedstudio.com/Grove-Relay-p-769.html)|DIO1|
 |Screw_Terminal/dio|Switch the digital output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとデジタル出力が切り替わり、その状態をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|DIO1|
+|Vibration_Sensor_(SW-420)|Detect if the sensor is shaken and transfer the result to device-shadow/センサーが振動したかどうかを検出し、結果をデバイスシャドウに送信します。|[Grove - 振動センサー(SW-420)](http://wiki.seeedstudio.com/Grove-Vibration_Sensor_SW-420/)|DIO1|
 |Screw_Terminal/adc|Transfer voltages of analog input to device-shadow/アナログ入力電圧値をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|AIN1|
 |Light_sensor|Transfer the value of sensor to device-shadow/光センサーの値をデバイスシャドウに送信します|[Grove - 光センサー v1.2](https://www.seeedstudio.com/Grove-Light-Sensor-v1-2-p-2727.html)|AIN1|
 
