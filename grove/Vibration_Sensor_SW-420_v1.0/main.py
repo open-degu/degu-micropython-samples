@@ -36,10 +36,14 @@ def main():
     vib = Vibration(0)
 
     while True:
-        if vib.detect():
-            reported['state']['reported']['detected'] = True
-            cli.request_post(path, ujson.dumps(reported))
-        sleep(60)
+        reported['state']['reported']['detected'] = False
+        for i in range(100):
+            if vib.detect():
+                reported['state']['reported']['detected'] = True
+            sleep(0.01)
+        json = ujson.dumps(reported)
+        cli.request_post(path, json)
+        print(json)
 
 if __name__ == "__main__":
     main()

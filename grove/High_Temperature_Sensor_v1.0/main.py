@@ -59,7 +59,9 @@ def main():
     while True:
         reported['state']['reported']['temp'] = temp.read()
 
-        cli.request_post(path, ujson.dumps(reported))
+        json = ujson.dumps(reported)
+        cli.request_post(path, json)
+        print(json)
         sleep(60)
 
 if __name__ == "__main__":

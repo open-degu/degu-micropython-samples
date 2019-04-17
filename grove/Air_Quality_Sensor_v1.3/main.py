@@ -30,7 +30,9 @@ def main():
     while True:
         reported['state']['reported']['air_quality'] = air.read()
 
-        cli.request_post(path, ujson.dumps(reported))
+        json = ujson.dumps(reported)
+        cli.request_post(path, json)
+        print(json)
         sleep(60)
 
 if __name__ == "__main__":
