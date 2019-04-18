@@ -53,6 +53,7 @@ Samples / サンプルコード
 |Light_sensor|Transfer the value of sensor to device-shadow/光センサーの値をデバイスシャドウに送信します|[Grove - 光センサー v1.2](https://www.seeedstudio.com/Grove-Light-Sensor-v1-2-p-2727.html)|AIN1|
 |High_Temperature_Sensor|Measure temperature up to 600 degrees Celsius (About 1100 degrees Fahrenheit) and transfer the value to device-shadow/600度までの温度を計測し、デバイスシャドウに送信します。|[Grove - 高温センサー](http://wiki.seeedstudio.com/Grove-High_Temperature_Sensor/)|AIN1|
 |Touch|Transfer status to device-shadow when the sensor is touched/センサーにタッチすると、状態をデバイスシャドウに送信します|[Grove - タッチセンサー](https://www.seeedstudio.com/Grove-Touch-Sensor-p-747.html)|DIO1|
+|Button|Transfer status to device-shadow when the button is pushed/ボタンが押下されると、状態をデバイスシャドウに送信します|[Grove - ボタン](https://www.seeedstudio.com/Grove-Button-p-766.html)|DIO1|
 
 What is Degu?
 --------
