@@ -44,11 +44,18 @@ Samples / サンプルコード
 |Barometer_Sensor_BME280|Transfer temperature, humidity and pressure to device-shadow/温湿度気圧センサーの温湿度と気圧をデバイスシャドウに送信します|[Grove - 温湿度気圧センサー(BME280)](https://www.seeedstudio.com/Grove-Temp-Humi-Barometer-Sensor-BME280-p-2653.html)|I2C|
 |Barometer_Sensor_BMP280|Transfer temperature and pressure to device-shadow/気圧センサーの温度と気圧をデバイスシャドウに送信します|[Grove - 気圧センサー(BMP280)](https://www.seeedstudio.com/Grove-Barometer-Sensor-BMP28-p-2652.html)|I2C|
 |3-Axis_Digital_Accelerometer_16g_BMA400|Transfer value of acceleromete and temperature to device-shadow/加速度センサーの値と温度をデバイスシャドウに送信します|[Grove - 3軸デジタル加速度センサー(±16g)超低消費電力(BMA400)](https://www.seeedstudio.com/Grove-3-Axis-Digital-Accelerometer-16g-Ultra-low-Power-BMA400-p-3201.html)|I2C|
+|Air_Quality_Sensor|Measure air quality and transfer the value to device-shadow/周辺の空気の汚染度を計測し、デバイスシャドウに送信します。|[Grove - 空気品質センサー](http://wiki.seeedstudio.com/Grove-Air_Quality_Sensor_v1.3/)|I2C|
 |Buzzer|Sound the buzzer, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとブザーが鳴り、その状態をデバイスシャドウに送信します|[Grove - ブザー](https://www.seeedstudio.com/Grove-Buzzer-p-768.html)|DIO1|
 |Relay|Switch on the relay output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとリレー出力がONになり、その状態をデバイスシャドウに送信します|[Grove - リレー](https://www.seeedstudio.com/Grove-Relay-p-769.html)|DIO1|
 |Screw_Terminal/dio|Switch the digital output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとデジタル出力が切り替わり、その状態をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|DIO1|
+|Vibration_Sensor_SW-420|Detect if the sensor is shaken and transfer the result to device-shadow/センサーが振動したかどうかを検出し、結果をデバイスシャドウに送信します。|[Grove - 振動センサー(SW-420)](http://wiki.seeedstudio.com/Grove-Vibration_Sensor_SW-420/)|DIO1|
 |Screw_Terminal/adc|Transfer voltages of analog input to device-shadow/アナログ入力電圧値をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|AIN1|
 |Light_sensor|Transfer the value of sensor to device-shadow/光センサーの値をデバイスシャドウに送信します|[Grove - 光センサー v1.2](https://www.seeedstudio.com/Grove-Light-Sensor-v1-2-p-2727.html)|AIN1|
+|High_Temperature_Sensor|Measure temperature up to 600 degrees Celsius (About 1100 degrees Fahrenheit) and transfer the value to device-shadow/600度までの温度を計測し、デバイスシャドウに送信します。|[Grove - 高温センサー](http://wiki.seeedstudio.com/Grove-High_Temperature_Sensor/)|AIN1|
+|Touch|Transfer status to device-shadow when the sensor is touched/センサーにタッチすると、状態をデバイスシャドウに送信します|[Grove - タッチセンサー](https://www.seeedstudio.com/Grove-Touch-Sensor-p-747.html)|DIO1|
+|Button|Transfer status to device-shadow when the button is pushed/ボタンが押下されると、状態をデバイスシャドウに送信します|[Grove - ボタン](https://www.seeedstudio.com/Grove-Button-p-766.html)|DIO1|
+|LED_Socket_Kit|Turn on the LED, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとLEDが点灯し、その状態をデバイスシャドウに送信します|[Grove - LED](https://www.seeedstudio.com/category/Grove-c-1003/leds-c-891/Grove-Red-LED.html)|DIO1|
+|Vibration_Motor|Turn on the vibration, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとモーターが振動し、その状態をデバイスシャドウに送信します|[Grove - 振動モーター](https://www.seeedstudio.com/Grove-Vibration-Motor-p-839.html)|DIO1|
 
 What is Degu?
 --------
