@@ -56,6 +56,7 @@ Samples / サンプルコード
 |Button|Transfer status to device-shadow when the button is pushed/ボタンが押下されると、状態をデバイスシャドウに送信します|[Grove - ボタン](https://www.seeedstudio.com/Grove-Button-p-766.html)|DIO1|
 |LED_Socket_Kit|Turn on the LED, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとLEDが点灯し、その状態をデバイスシャドウに送信します|[Grove - LED](https://www.seeedstudio.com/category/Grove-c-1003/leds-c-891/Grove-Red-LED.html)|DIO1|
 |Vibration_Motor|Turn on the vibration, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとモーターが振動し、その状態をデバイスシャドウに送信します|[Grove - 振動モーター](https://www.seeedstudio.com/Grove-Vibration-Motor-p-839.html)|DIO1|
+|6-Axis_Accelerometer_and_Gyroscope|Transfer value of accelerometer and gyroscope to device-shadow/加速度センサーとジャイロセンサーの値をデバイスシャドウに送信します|[Grove - 6軸加速度・ジャイロセンサ](https://www.seeedstudio.com/Grove-6-Axis-Accelerometer-Gyroscope-p-2606.html)|I2C|
 
 What is Degu?
 --------
