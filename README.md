@@ -52,6 +52,7 @@ Samples / サンプルコード
 |Screw_Terminal/adc|Transfer voltages of analog input to device-shadow/アナログ入力電圧値をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|AIN1|
 |Light_sensor|Transfer the value of sensor to device-shadow/光センサーの値をデバイスシャドウに送信します|[Grove - 光センサー v1.2](https://www.seeedstudio.com/Grove-Light-Sensor-v1-2-p-2727.html)|AIN1|
 |High_Temperature_Sensor|Measure temperature up to 600 degrees Celsius (About 1100 degrees Fahrenheit) and transfer the value to device-shadow/600度までの温度を計測し、デバイスシャドウに送信します。|[Grove - 高温センサー](http://wiki.seeedstudio.com/Grove-High_Temperature_Sensor/)|AIN1|
+|Touch|Transfer status to device-shadow when the sensor is touched/センサーにタッチすると、状態をデバイスシャドウに送信します|[Grove - タッチセンサー](https://www.seeedstudio.com/Grove-Touch-Sensor-p-747.html)|DIO1|
 
 What is Degu?
 --------
