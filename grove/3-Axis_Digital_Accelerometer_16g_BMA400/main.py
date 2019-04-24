@@ -126,7 +126,7 @@ class BMA400:
         y = round(((axis_y * 7.81)/1000), 2)
         z = round(((axis_z * 7.81)/1000), 2)
 
-        return {'x': x, 'y': y, 'z': x}
+        return {'x': x, 'y': y, 'z': z}
 
     def temprature_read(self): 
         global temp_data
