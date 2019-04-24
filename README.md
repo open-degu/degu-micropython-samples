@@ -51,6 +51,7 @@ Samples / サンプルコード
 |I2C_Color_sensor|Measure chromaticity of light in RGB, and transfer the value to device-shadow/RGBで光の色を計測し、デバイスシャドウに送信します。|[Grove - I2C色センサー](http://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/)|I2C|
 |Screw_Terminal/adc|Transfer voltages of analog input to device-shadow/アナログ入力電圧値をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|AIN1|
 |Light_sensor|Transfer the value of sensor to device-shadow/光センサーの値をデバイスシャドウに送信します|[Grove - 光センサー v1.2](https://www.seeedstudio.com/Grove-Light-Sensor-v1-2-p-2727.html)|AIN1|
+|Round_Force_Sensor_FSR402|Transfer the value of sensor to device-shadow/感圧センサーの値をデバイスシャドウに送信します|[Grove - FSR402搭載 感圧センサー](https://www.seeedstudio.com/Grove-Round-Force-Sensor-FSR40-p-3110.html)|AIN1|
 |Rotary_Angle_Sensor|Transfer the angle of sensor to device-shadow/センサーの現在の角度をデバイスシャドウに送信します|[Grove - 回転角度センサー](https://www.seeedstudio.com/Grove-Rotary-Angle-Sensor.html)|AIN1|
 |High_Temperature_Sensor|Measure temperature up to 600 degrees Celsius (About 1100 degrees Fahrenheit) and transfer the value to device-shadow/600度までの温度を計測し、デバイスシャドウに送信します。|[Grove - 高温センサー](http://wiki.seeedstudio.com/Grove-High_Temperature_Sensor/)|AIN1|
 |Buzzer|Sound the buzzer, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとブザーが鳴り、その状態をデバイスシャドウに送信します|[Grove - ブザー](https://www.seeedstudio.com/Grove-Buzzer-p-768.html)|DIO1|
