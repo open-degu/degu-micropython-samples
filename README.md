@@ -54,6 +54,7 @@ Samples / サンプルコード
 |Round_Force_Sensor_FSR402|Transfer the value of sensor to device-shadow/感圧センサーの値をデバイスシャドウに送信します|[Grove - FSR402搭載 感圧センサー](https://www.seeedstudio.com/Grove-Round-Force-Sensor-FSR40-p-3110.html)|AIN1|
 |Rotary_Angle_Sensor|Transfer the angle of sensor to device-shadow/センサーの現在の角度をデバイスシャドウに送信します|[Grove - 回転角度センサー](https://www.seeedstudio.com/Grove-Rotary-Angle-Sensor.html)|AIN1|
 |High_Temperature_Sensor|Measure temperature up to 600 degrees Celsius (About 1100 degrees Fahrenheit) and transfer the value to device-shadow/600度までの温度を計測し、デバイスシャドウに送信します。|[Grove - 高温センサー](http://wiki.seeedstudio.com/Grove-High_Temperature_Sensor/)|AIN1|
+|5V_DC_AC_Current_Sensor|Transfer the current electric current input to the sensor in mA/センサーに入力された電流をmAで計測します。|[Grove - ±5V DC/AC 電流センサー](http://wiki.seeedstudio.com/Grove-5A_DC_AC_Current_Sensor-ACS70331/)|AIN1|
 |Buzzer|Sound the buzzer, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとブザーが鳴り、その状態をデバイスシャドウに送信します|[Grove - ブザー](https://www.seeedstudio.com/Grove-Buzzer-p-768.html)|DIO1|
 |Relay|Switch on the relay output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとリレー出力がONになり、その状態をデバイスシャドウに送信します|[Grove - リレー](https://www.seeedstudio.com/Grove-Relay-p-769.html)|DIO1|
 |Screw_Terminal/dio|Switch the digital output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとデジタル出力が切り替わり、その状態をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|DIO1|
