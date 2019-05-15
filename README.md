@@ -50,6 +50,7 @@ Samples / サンプルコード
 |Air_Quality_Sensor|Measure air quality and transfer the value to device-shadow/周辺の空気の汚染度を計測し、デバイスシャドウに送信します。|[Grove - 空気品質センサー](http://wiki.seeedstudio.com/Grove-Air_Quality_Sensor_v1.3/)|I2C|
 |I2C_Color_sensor|Measure chromaticity of light in RGB, and transfer the value to device-shadow/RGBで光の色を計測し、デバイスシャドウに送信します。|[Grove - I2C色センサー](http://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/)|I2C|
 |Temperature_and_Humidity_Sensor_SHT31|Transfer temperature and humidity to device-shadow/温湿度をデバイスシャドウに送信します|[Grove - 温湿度センサ（SHT31)](https://www.seeedstudio.com/Grove-Temperature-Humidity-Sensor-SHT31.html)|I2C|
+|CO2_Temperature_Humidity_Sensor_(SCD30)_v1.0|Measure CO2 concentration, temperature and humidity and transfer them to device-shadow/CO2の濃度、温度及び湿度を計測し、デバイスシャドウに送信します。|[Grove - CO2&温度&湿度センサー(SCD30)v1.0](http://wiki.seeedstudio.com/Grove-CO2_Temperature_Humidity_Sensor-SCD30/)|I2C|
 |Screw_Terminal/adc|Transfer voltages of analog input to device-shadow/アナログ入力電圧値をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|AIN1|
 |Light_sensor|Transfer the value of sensor to device-shadow/光センサーの値をデバイスシャドウに送信します|[Grove - 光センサー v1.2](https://www.seeedstudio.com/Grove-Light-Sensor-v1-2-p-2727.html)|AIN1|
 |Round_Force_Sensor_FSR402|Transfer the value of sensor to device-shadow/感圧センサーの値をデバイスシャドウに送信します|[Grove - FSR402搭載 感圧センサー](https://www.seeedstudio.com/Grove-Round-Force-Sensor-FSR40-p-3110.html)|AIN1|
