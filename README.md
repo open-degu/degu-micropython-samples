@@ -21,7 +21,7 @@ You can try them with just following 3 steps. / 次の3ステップで試すこ�
 
 1. Connect Degu to your PC. / DeguをPCに接続してください。
 
-1. Copy main.py you selected to USB mass storage of your Degu. / 好きなmain.pyをDeguのUSBマスストレージにコピーしてください。
+1. Copy main.py you selected to USB mass storage of your Degu and remove the device safely. / 好きなmain.pyをDeguのUSBマスストレージにコピーし、デバイスを安全に取り外して下さい。
 
 1. Reboot your Degu. (To press the reset button or turn off/on the power) / Deguを再起動してください(リセットボタンを押すか電源を入れなおす)
 
