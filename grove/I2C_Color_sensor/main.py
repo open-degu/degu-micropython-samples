@@ -58,13 +58,14 @@ def main():
     path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
-    addr = zcoap.gw_addr()
-    port = 5683
-    cli = zcoap.client((addr, port))
 
     colorSensor = ColorSensor()
 
     while True:
+        addr = zcoap.gw_addr()
+        port = 5683
+        cli = zcoap.client((addr, port))
+
         color = colorSensor.readColor()
         reported['state']['reported']['color'] = {
             'red': color[0],
@@ -76,6 +77,7 @@ def main():
         cli.request_post(path, json)
         print(json)
         sleep(60)
+        cli.close()
 
 if __name__ == "__main__":
     main()

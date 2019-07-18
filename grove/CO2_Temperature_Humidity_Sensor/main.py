@@ -32,13 +32,14 @@ def main():
     path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
-    addr = zcoap.gw_addr()
-    port = 5683
-    cli = zcoap.client((addr, port))
 
     co2 = CO2()
 
     while True:
+        addr = zcoap.gw_addr()
+        port = 5683
+        cli = zcoap.client((addr, port))
+
         concentration = co2.getConcentration()
         reported['state']['reported']['co2'] = {
             'co2concentration': concentration[0],
@@ -50,6 +51,7 @@ def main():
         cli.request_post(path, json)
         print(json)
         sleep(60)
+        cli.close()
 
 if __name__ == "__main__":
     main()

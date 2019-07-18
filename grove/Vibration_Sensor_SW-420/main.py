@@ -29,13 +29,14 @@ def main():
     path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
-    addr = zcoap.gw_addr()
-    port = 5683
-    cli = zcoap.client((addr, port))
 
     vib = Vibration(0)
 
     while True:
+        addr = zcoap.gw_addr()
+        port = 5683
+        cli = zcoap.client((addr, port))
+
         reported['state']['reported']['vibration'] = "not detected"
         for i in range(100):
             if vib.detect():
@@ -44,6 +45,7 @@ def main():
         json = ujson.dumps(reported)
         cli.request_post(path, json)
         print(json)
+        cli.close()
 
 if __name__ == "__main__":
     main()

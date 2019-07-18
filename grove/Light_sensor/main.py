@@ -18,11 +18,12 @@ if __name__ == '__main__':
     path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
-    addr = zcoap.gw_addr()
-    port = 5683
-    cli = zcoap.client((addr, port))
 
     while True:
+        addr = zcoap.gw_addr()
+        port = 5683
+        cli = zcoap.client((addr, port))
+
         light = round(light_sensor(), 2)
         reported['state']['reported']['light'] = light
 
@@ -30,4 +31,4 @@ if __name__ == '__main__':
         cli.request_post(path, ujson.dumps(reported))
         time.sleep(1)
 
-    cli.close()
+        cli.close()

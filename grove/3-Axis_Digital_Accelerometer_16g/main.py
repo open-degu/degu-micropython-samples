@@ -88,18 +88,20 @@ def main():
     path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
-    addr = zcoap.gw_addr()
-    port = 5683
-    cli = zcoap.client((addr, port))
 
     adxl345 = ADXL345(ADXL345_I2CADDR)
 
     while True:
+        addr = zcoap.gw_addr()
+        port = 5683
+        cli = zcoap.client((addr, port))
+
         reported['state']['reported']['axis'] = adxl345.getAxes()
 
         print(ujson.dumps(reported))
         cli.request_post(path, ujson.dumps(reported))
         time.sleep(5)
+        cli.close()
 
 if __name__ == "__main__":
     main()

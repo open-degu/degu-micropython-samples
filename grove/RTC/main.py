@@ -53,9 +53,6 @@ def main():
     path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
-    addr = zcoap.gw_addr()
-    port = 5683
-    cli = zcoap.client((addr, port))
 
     rtc = RTC()
 
@@ -66,6 +63,10 @@ def main():
     formatString = "{}-{:0>2}-{:0>2}({:0>2}) {:0>2}:{:0>2}:{:0>2}"
 
     while True:
+        addr = zcoap.gw_addr()
+        port = 5683
+        cli = zcoap.client((addr, port))
+
         time = rtc.getTime()
         reported['state']['reported']['time'] = {"time": formatString.format(
             time[0], time[1], time[2], days[time[3]], time[4], time[5], time[6]
@@ -75,6 +76,7 @@ def main():
         cli.request_post(path, json)
         print(json)
         sleep(1)
+        cli.close()
 
 if __name__ == "__main__":
     main() 

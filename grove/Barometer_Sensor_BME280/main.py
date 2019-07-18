@@ -180,14 +180,15 @@ def main():
     path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
-    addr = zcoap.gw_addr()
-    port = 5683
-    cli = zcoap.client((addr, port))
 
     bus = I2C(1)
     bme = BME280(i2c=bus)
 
     while True:
+        addr = zcoap.gw_addr()
+        port = 5683
+        cli = zcoap.client((addr, port))
+
         reported['state']['reported']['temp'] = bme.values[0]
         reported['state']['reported']['pres'] = bme.values[1]
         reported['state']['reported']['humid'] = bme.values[2]
@@ -195,6 +196,6 @@ def main():
         print(ujson.dumps(reported))
         cli.request_post(path, ujson.dumps(reported))
         time.sleep(60)
-
+        cli.close()
 if __name__ == "__main__":
     main()
