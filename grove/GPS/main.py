@@ -83,18 +83,20 @@ def main():
     path = 'thing/' + zcoap.eui64()
     reported = {'state': {'reported': {}}}
 
-    addr = zcoap.gw_addr()
-    port = 5683
-    cli = zcoap.client((addr, port))
 
     gps = GPS(0, GPS_BAUDRATE)
 
     while True:
+        addr = zcoap.gw_addr()
+        port = 5683
+        cli = zcoap.client((addr, port))
+
         reported['state']['reported'] = gps.read(("gprmc", "gpgsa"))
         json = ujson.dumps(reported)
         print(json)
         cli.request_post(path, json)
         time.sleep(1)
+        cli.close()
 
 
 if __name__ == "__main__":

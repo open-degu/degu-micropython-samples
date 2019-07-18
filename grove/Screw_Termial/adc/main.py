@@ -27,11 +27,12 @@ if __name__ == '__main__':
     path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
-    addr = zcoap.gw_addr()
-    port = 5683
-    cli = zcoap.client((addr, port))
 
     while True:
+        addr = zcoap.gw_addr()
+        port = 5683
+        cli = zcoap.client((addr, port))
+
         d1 = round(d1_voltage(), 2)
         d2 = round(d2_voltage(), 2)
         reported['state']['reported']['terminal'] = {'d1':d1, 'd2':d2}
@@ -40,4 +41,4 @@ if __name__ == '__main__':
         cli.request_post(path, ujson.dumps(reported))
         time.sleep(1)
 
-    cli.close()
+        cli.close()
