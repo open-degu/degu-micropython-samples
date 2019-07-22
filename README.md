@@ -36,6 +36,7 @@ Samples / サンプルコード
 |:--|:--|
 |default|Trun on LED1 when recive its own device-shadow/自機のデバイスシャドウを受信するとLED1が点灯します(出荷時イメージ)|
 |battery|Transfer battery voltage to device-shadow/バッテリーの電圧をデバイスシャドウに送信します|
+|control_led2|You can control LED2 on the board from Device Shadow/デバイスシャドウから、LED2を制御することができます|
 
 ### grove/
 
