@@ -12,7 +12,7 @@ Requirements / 要件
 
 These sample codes are compatible with Degu firmware `v0.9.3` or later. [Update](https://open-degu.github.io/user_manual/20_software_update/) if your degu firmware version is old.
 
-このサンプルコードに対応しているDeguファームウェアのバージョンは`v0.9.1`以降です。お使いのDeguファームウェアバージョンが古い場合は、[アップデートしてください。](https://open-degu.github.io/user_manual/20_software_update/)
+このサンプルコードに対応しているDeguファームウェアのバージョンは`v0.9.3`以降です。お使いのDeguファームウェアバージョンが古い場合は、[アップデートしてください。](https://open-degu.github.io/user_manual/20_software_update/)
 
 Usage / 使い方
 --------
