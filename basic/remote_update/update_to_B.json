@@ -1,0 +1,6 @@
+{
+    "desired": {
+        "script_user": "https://raw.githubusercontent.com/open-degu/degu-micropython-samples/master/basic/remote_update/main_B.py",
+        "script_user_ver": "4f3e01b7dc12348ebbd1acfe11ef6328"
+    }
+}
