@@ -56,12 +56,13 @@ def main():
 
     bus = I2C(1)
     sht31 = SHT31(i2c=bus)
-    values = sht31.get_temp_humi()
 
     while True:
         addr = zcoap.gw_addr()
         port = 5683
         cli = zcoap.client((addr, port))
+
+        values = sht31.get_temp_humi()
 
         reported['state']['reported']['temp'] = values[0]
         reported['state']['reported']['humid'] = values[1]
