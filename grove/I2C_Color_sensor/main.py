@@ -3,11 +3,11 @@ from time import sleep
 import zcoap
 import ujson
 
+
 class ColorSensor:
     def __init__(self):
         self.i2c = I2C(1)
         self.address = 0x29
-        self.initialized = False
 
     def writeList(self, data):
         self.i2c.writeto(self.address, bytes(data))
@@ -27,22 +27,17 @@ class ColorSensor:
             result += int(response[i]) * (256 ** i)
         return result
 
-    def begin(self):
+    def readColor(self):
         response = self.read(0x12, 1)
+
         if response != 0x44 and response != 0x10:
-            return False
-        self.initialized = True
+            raise Exception()
+
         self.write(0x01, [0xEB])
         self.write(0x0F, [0x01])
         self.write(0x00, [0x01])
         sleep(0.01)
         self.write(0x00, [0x03])
-        return True
-
-    def readColor(self):
-        if not self.initialized:
-            if self.begin() == False:
-                return [0, 0, 0, 0]
 
         sleep(0.05)
 
@@ -53,11 +48,10 @@ class ColorSensor:
 
         return [red, green, blue]
 
-                
+
 def main():
     path = 'thing/' + zcoap.eui64()
-    reported = {'state':{'reported':{}}}
-
+    reported = {'state': {'reported': {}}}
 
     colorSensor = ColorSensor()
 
@@ -78,6 +72,7 @@ def main():
         print(json)
         sleep(60)
         cli.close()
+
 
 if __name__ == "__main__":
     main()
