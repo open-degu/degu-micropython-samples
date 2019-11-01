@@ -62,6 +62,8 @@ Samples / サンプルコード
 |5V_DC_AC_Current_Sensor|Transfer the current electric current input to the sensor in mA/センサーに入力された電流をmAで計測します。|[Grove - ±5V DC/AC 電流センサー](http://wiki.seeedstudio.com/Grove-5A_DC_AC_Current_Sensor-ACS70331/)|AIN1|
 |Loudness_Sensor|Transfer the loudness value to device-shadow//騒音の値をデバイスシャドウに送信します。|[Grove - 騒音センサー](https://www.seeedstudio.com/Grove-Loudness-Sensor.html)|AIN1|
 |Moisture_Sensor|Measure the moisture content in soil and transmit the value to the device-shadow. / 土壌の含水率を計測し、デバイスシャドウに送信します。|[Grove - 湿度センサー](https://www.seeedstudio.com/Grove-Moisture-Sensor.html)|AIN1|
+|Temperature_Sensor|Measure temperature and transmit the value to the device-shadow. / 気温を計測し、デバイスシャドウに送信します。|[Grove - 温度センサー](https://www.seeedstudio.com/Grove-Temperature-Sensor.html)|AIN1|
+|Sound_Sensor|Measure the sound intensity around and transmit the value to the device-shadow. / 周囲の音の強さを計測し、デバイスシャドウに送信します。|[Grove - 音響センサー](https://www.seeedstudio.com/Grove-Sound-Sensor.html)|AIN1|
 |Buzzer|Sound the buzzer, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとブザーが鳴り、その状態をデバイスシャドウに送信します|[Grove - ブザー](https://www.seeedstudio.com/Grove-Buzzer-p-768.html)|DIO1|
 |Relay|Switch on the relay output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとリレー出力がONになり、その状態をデバイスシャドウに送信します|[Grove - リレー](https://www.seeedstudio.com/Grove-Relay-p-769.html)|DIO1|
 |Screw_Terminal/dio|Switch the digital output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとデジタル出力が切り替わり、その状態をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|DIO1|
@@ -70,6 +72,7 @@ Samples / サンプルコード
 |Button|Transfer status to device-shadow when the button is pushed/ボタンが押下されると、状態をデバイスシャドウに送信します|[Grove - ボタン](https://www.seeedstudio.com/Grove-Button-p-766.html)|DIO1|
 |LED_Socket_Kit|Turn on the LED, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとLEDが点灯し、その状態をデバイスシャドウに送信します|[Grove - LED](https://www.seeedstudio.com/category/Grove-c-1003/leds-c-891/Grove-Red-LED.html)|DIO1|
 |Vibration_Motor|Turn on the vibration, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとモーターが振動し、その状態をデバイスシャドウに送信します|[Grove - 振動モーター](https://www.seeedstudio.com/Grove-Vibration-Motor-p-839.html)|DIO1|
+|Adjustable_PIR_Motion_Sensor|Detect the things around to move and transmit if the sensor detected any motion to device-shadow as a boolean. / 物の移動を検出し、真理値としてデバイスシャドウに送信します。|[Grove - PIRセンサー](https://www.seeedstudio.com/Grove-Adjustable-PIR-Motion-Sensor-p-3225.html)|DIO1|
 |GPS|Transfer datetime, latitude, longitude and PDOP(position dilution of precision) to device-shadow/日時・緯度経度・PDOP(位置精度低下率)をデバイスシャドウに送信します|[Grove - GPS](https://www.seeedstudio.com/Grove-GPS-p-959.html)|UART|
 
 What is Degu?
