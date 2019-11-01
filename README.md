@@ -61,6 +61,7 @@ Samples / サンプルコード
 |High_Temperature_Sensor|Measure temperature up to 600 degrees Celsius (About 1100 degrees Fahrenheit) and transfer the value to device-shadow/600度までの温度を計測し、デバイスシャドウに送信します。|[Grove - 高温センサー](http://wiki.seeedstudio.com/Grove-High_Temperature_Sensor/)|AIN1|
 |5V_DC_AC_Current_Sensor|Transfer the current electric current input to the sensor in mA/センサーに入力された電流をmAで計測します。|[Grove - ±5V DC/AC 電流センサー](http://wiki.seeedstudio.com/Grove-5A_DC_AC_Current_Sensor-ACS70331/)|AIN1|
 |Loudness_Sensor|Transfer the loudness value to device-shadow//騒音の値をデバイスシャドウに送信します。|[Grove - 騒音センサー](https://www.seeedstudio.com/Grove-Loudness-Sensor.html)|AIN1|
+|Temperature_Sensor|Measure temperature and transmit the value to the device-shadow. / 気温を計測し、デバイスシャドウに送信します。|[Grove - 温度センサー](https://www.seeedstudio.com/Grove-Temperature-Sensor.html)|AIN1|
 |Sound_Sensor|Measure the sound intensity around and transmit the value to the device-shadow. / 周囲の音の強さを計測し、デバイスシャドウに送信します。|[Grove - 音響センサー](https://www.seeedstudio.com/Grove-Sound-Sensor.html)|AIN1|
 |Buzzer|Sound the buzzer, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとブザーが鳴り、その状態をデバイスシャドウに送信します|[Grove - ブザー](https://www.seeedstudio.com/Grove-Buzzer-p-768.html)|DIO1|
 |Relay|Switch on the relay output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとリレー出力がONになり、その状態をデバイスシャドウに送信します|[Grove - リレー](https://www.seeedstudio.com/Grove-Relay-p-769.html)|DIO1|
