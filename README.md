@@ -64,6 +64,7 @@ Samples / サンプルコード
 |Moisture_Sensor|Measure the moisture content in soil and transmit the value to the device-shadow. / 土壌の含水率を計測し、デバイスシャドウに送信します。|[Grove - 湿度センサー](https://www.seeedstudio.com/Grove-Moisture-Sensor.html)|AIN1|
 |Temperature_Sensor|Measure temperature and transmit the value to the device-shadow. / 気温を計測し、デバイスシャドウに送信します。|[Grove - 温度センサー](https://www.seeedstudio.com/Grove-Temperature-Sensor.html)|AIN1|
 |Sound_Sensor|Measure the sound intensity around and transmit the value to the device-shadow. / 周囲の音の強さを計測し、デバイスシャドウに送信します。|[Grove - 音響センサー](https://www.seeedstudio.com/Grove-Sound-Sensor.html)|AIN1|
+|2.5A_DC_Current_Sensor_ACS70331|Measure the DC input up to 2.5A by the mA unit and transmit the current strength to the device-shadow. / mA単位で最大2.5AのDC入力を測定し、電流強度をデバイスシャドウに送信します。|[Grove - 2.5A DC 電流センサー(ACS70331)](http://wiki.seeedstudio.com/Grove-2.5A-DC-Current-Sensor-ACS70331/)|AIN1|
 |Buzzer|Sound the buzzer, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとブザーが鳴り、その状態をデバイスシャドウに送信します|[Grove - ブザー](https://www.seeedstudio.com/Grove-Buzzer-p-768.html)|DIO1|
 |Relay|Switch on the relay output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとリレー出力がONになり、その状態をデバイスシャドウに送信します|[Grove - リレー](https://www.seeedstudio.com/Grove-Relay-p-769.html)|DIO1|
 |Screw_Terminal/dio|Switch the digital output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとデジタル出力が切り替わり、その状態をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|DIO1|
