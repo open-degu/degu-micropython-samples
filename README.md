@@ -17,13 +17,13 @@ These sample codes are compatible with Degu firmware `v0.9.3` or later. [Update]
 Usage / 使い方
 --------
 
-You can try them with just following 3 steps. / 次の3ステップで試すことができます。
+You can try them with just the following 3 steps. / 次の3ステップで試すことができます。
 
 1. Connect Degu to your PC. / DeguをPCに接続してください。
 
 1. Copy main.py you selected to USB mass storage of your Degu. / 好きなmain.pyをDeguのUSBマスストレージにコピーしてください。
 
-1. Reboot your Degu. (To press the reset button or turn off/on the power) / Deguを再起動してください(リセットボタンを押すか電源を入れなおす)
+1. Reboot your Degu. (Press the reset button or turn off and on the power) / Deguを再起動してください(リセットボタンを押すか電源を入れなおす)
 
 That's it! / これだけ!
 
@@ -80,7 +80,7 @@ Samples / サンプルコード
 What is Degu?
 --------
 
-Degu is an open-source sensor device platform based on a low-power MCU and the Grove sensors connection interfaces. Degu can connect gateway by Openthread stacks and it on Zephyr OS. For programing user specific behaviour, it impremented micropython interpreter for execute user application.
+Degu is an open-source sensor device platform based on a low-power MCU and the Grove sensors connection interfaces. Degu runs on Zephyr OS and can connect to the Degu gateway by Openthread stacks. Besides, Degu has the MicroPython interpreter that allows you to make your application.
 
 * More informations about Degu, visit degu web site(https://open-degu.com/)
 
