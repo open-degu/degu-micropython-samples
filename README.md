@@ -74,6 +74,7 @@ Samples / サンプルコード
 |LED_Socket_Kit|Turn on the LED, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとLEDが点灯し、その状態をデバイスシャドウに送信します|[Grove - LED](https://www.seeedstudio.com/category/Grove-c-1003/leds-c-891/Grove-Red-LED.html)|DIO1|
 |Vibration_Motor|Turn on the vibration, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとモーターが振動し、その状態をデバイスシャドウに送信します|[Grove - 振動モーター](https://www.seeedstudio.com/Grove-Vibration-Motor-p-839.html)|DIO1|
 |Adjustable_PIR_Motion_Sensor|Detect the things around to move and transmit if the sensor detected any motion to device-shadow as a boolean. / 物の移動を検出し、真理値としてデバイスシャドウに送信します。|[Grove - PIRセンサー](https://www.seeedstudio.com/Grove-Adjustable-PIR-Motion-Sensor-p-3225.html)|DIO1|
+|Collision Sensor|Detect omnidirectional vibration and transmit if the sensor detect it to the device-shadow. / 振動を検出し、真理値としてデバイスシャドウに送信します。|[Grove - 衝突センサー](https://www.seeedstudio.com/Grove-Collision-Sensor.html)|DIO1|
 |Piezo_Electric_Sensor|Detect changes in vibration and pressure and transmit if the sensor detected any changes, to the device-shadow. / 振動や圧力を検出し、デバイスシャドウに真理値として送信します。|[Grove - 圧電振動センサー](http://wiki.seeedstudio.com/Grove-Piezo_Vibration_Sensor/)|DIO1|
 |GPS|Transfer datetime, latitude, longitude and PDOP(position dilution of precision) to device-shadow/日時・緯度経度・PDOP(位置精度低下率)をデバイスシャドウに送信します|[Grove - GPS](https://www.seeedstudio.com/Grove-GPS-p-959.html)|UART|
 
