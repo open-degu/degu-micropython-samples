@@ -17,13 +17,13 @@ These sample codes are compatible with Degu firmware `v0.9.3` or later. [Update]
 Usage / 使い方
 --------
 
-You can try them with just following 3 steps. / 次の3ステップで試すことができます。
+You can try them with just the following 3 steps. / 次の3ステップで試すことができます。
 
 1. Connect Degu to your PC. / DeguをPCに接続してください。
 
 1. Copy main.py you selected to USB mass storage of your Degu. / 好きなmain.pyをDeguのUSBマスストレージにコピーしてください。
 
-1. Reboot your Degu. (To press the reset button or turn off/on the power) / Deguを再起動してください(リセットボタンを押すか電源を入れなおす)
+1. Reboot your Degu. (Press the reset button or turn off and on the power) / Deguを再起動してください(リセットボタンを押すか電源を入れなおす)
 
 That's it! / これだけ!
 
@@ -64,6 +64,7 @@ Samples / サンプルコード
 |Moisture_Sensor|Measure the moisture content in soil and transmit the value to the device-shadow. / 土壌の含水率を計測し、デバイスシャドウに送信します。|[Grove - 湿度センサー](https://www.seeedstudio.com/Grove-Moisture-Sensor.html)|AIN1|
 |Temperature_Sensor|Measure temperature and transmit the value to the device-shadow. / 気温を計測し、デバイスシャドウに送信します。|[Grove - 温度センサー](https://www.seeedstudio.com/Grove-Temperature-Sensor.html)|AIN1|
 |Sound_Sensor|Measure the sound intensity around and transmit the value to the device-shadow. / 周囲の音の強さを計測し、デバイスシャドウに送信します。|[Grove - 音響センサー](https://www.seeedstudio.com/Grove-Sound-Sensor.html)|AIN1|
+|2.5A_DC_Current_Sensor_ACS70331|Measure the DC input up to 2.5A by the mA unit and transmit the current strength to the device-shadow. / mA単位で最大2.5AのDC入力を測定し、電流強度をデバイスシャドウに送信します。|[Grove - 2.5A DC 電流センサー(ACS70331)](http://wiki.seeedstudio.com/Grove-2.5A-DC-Current-Sensor-ACS70331/)|AIN1|
 |Buzzer|Sound the buzzer, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとブザーが鳴り、その状態をデバイスシャドウに送信します|[Grove - ブザー](https://www.seeedstudio.com/Grove-Buzzer-p-768.html)|DIO1|
 |Relay|Switch on the relay output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとリレー出力がONになり、その状態をデバイスシャドウに送信します|[Grove - リレー](https://www.seeedstudio.com/Grove-Relay-p-769.html)|DIO1|
 |Screw_Terminal/dio|Switch the digital output, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとデジタル出力が切り替わり、その状態をデバイスシャドウに送信します|[Grove - 端子台](https://www.seeedstudio.com/Grove-Screw-Terminal-p-996.html)|DIO1|
@@ -74,12 +75,13 @@ Samples / サンプルコード
 |Vibration_Motor|Turn on the vibration, and transfer status to device-shadow when SW4 is pushed/SW4を押下するとモーターが振動し、その状態をデバイスシャドウに送信します|[Grove - 振動モーター](https://www.seeedstudio.com/Grove-Vibration-Motor-p-839.html)|DIO1|
 |Adjustable_PIR_Motion_Sensor|Detect the things around to move and transmit if the sensor detected any motion to device-shadow as a boolean. / 物の移動を検出し、真理値としてデバイスシャドウに送信します。|[Grove - PIRセンサー](https://www.seeedstudio.com/Grove-Adjustable-PIR-Motion-Sensor-p-3225.html)|DIO1|
 |Collision Sensor|Detect omnidirectional vibration and transmit if the sensor detect it to the device-shadow. / 振動を検出し、真理値としてデバイスシャドウに送信します。|[Grove - 衝突センサー](https://www.seeedstudio.com/Grove-Collision-Sensor.html)|DIO1|
+|Piezo_Electric_Sensor|Detect changes in vibration and pressure and transmit if the sensor detected any changes, to the device-shadow. / 振動や圧力を検出し、デバイスシャドウに真理値として送信します。|[Grove - 圧電振動センサー](http://wiki.seeedstudio.com/Grove-Piezo_Vibration_Sensor/)|DIO1|
 |GPS|Transfer datetime, latitude, longitude and PDOP(position dilution of precision) to device-shadow/日時・緯度経度・PDOP(位置精度低下率)をデバイスシャドウに送信します|[Grove - GPS](https://www.seeedstudio.com/Grove-GPS-p-959.html)|UART|
 
 What is Degu?
 --------
 
-Degu is an open-source sensor device platform based on a low-power MCU and the Grove sensors connection interfaces. Degu can connect gateway by Openthread stacks and it on Zephyr OS. For programing user specific behaviour, it impremented micropython interpreter for execute user application.
+Degu is an open-source sensor device platform based on a low-power MCU and the Grove sensors connection interfaces. Degu runs on Zephyr OS and can connect to the Degu gateway by Openthread stacks. Besides, Degu has the MicroPython interpreter that allows you to make your application.
 
 * More informations about Degu, visit degu web site(https://open-degu.com/)
 
