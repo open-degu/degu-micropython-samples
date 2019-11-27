@@ -1,8 +1,7 @@
 import time
-import zcoap
+import degu
 import ujson
 import machine
-from sys import exit
 
 i2c = machine.I2C(1)
 
@@ -85,23 +84,16 @@ class ADXL345:
         return {'x': x, 'y': y, 'z': z}
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
-
 
     adxl345 = ADXL345(ADXL345_I2CADDR)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['axis'] = adxl345.getAxes()
 
         print(ujson.dumps(reported))
-        cli.request_post(path, ujson.dumps(reported))
+        degu.update_shadow(ujson.dumps(reported))
         time.sleep(5)
-        cli.close()
 
 if __name__ == "__main__":
     main()

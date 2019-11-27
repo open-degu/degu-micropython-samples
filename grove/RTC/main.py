@@ -1,8 +1,8 @@
 from machine import I2C
 from time import sleep
-import zcoap
+import degu
 import ujson
-from ustruct import unpack
+
 
 class RTC:
     def __init__(self):
@@ -50,7 +50,6 @@ class RTC:
         return [2000 + year, month, day, dayOfWeek, hour, minute, second]
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
@@ -63,20 +62,16 @@ def main():
     formatString = "{}-{:0>2}-{:0>2}({:0>2}) {:0>2}:{:0>2}:{:0>2}"
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         time = rtc.getTime()
         reported['state']['reported']['time'] = {"time": formatString.format(
             time[0], time[1], time[2], days[time[3]], time[4], time[5], time[6]
         )}
 
         json = ujson.dumps(reported)
-        cli.request_post(path, json)
+        degu.update_shadow(json)
         print(json)
         sleep(1)
-        cli.close()
+
 
 if __name__ == "__main__":
     main() 

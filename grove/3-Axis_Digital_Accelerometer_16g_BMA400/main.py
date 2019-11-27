@@ -1,8 +1,7 @@
 import time
-import zcoap
+import degu
 import ujson
 from machine import I2C
-from sys import exit
 
 # create an i2c on bus 1
 i2c = I2C(1)
@@ -153,24 +152,19 @@ class BMA400:
         time.sleep_us(10)
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
     bma400 = BMA400(BMA400_I2CADDR)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['temp'] = bma400.temprature_read()
         reported['state']['reported']['axis'] = bma400.accel_axis_read()
 
-        print(ujson.dumps(reported))
-        cli.request_post(path, ujson.dumps(reported))
+        json = ujson.dumps(reported)
+        print(json)
+        degu.update_shadow(json)
         time.sleep(5)
-        cli.close()
 
 if __name__ == "__main__":
     main()

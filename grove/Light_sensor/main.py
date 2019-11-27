@@ -1,5 +1,5 @@
 from machine import ADC
-import zcoap
+import degu
 import time
 import ujson
 
@@ -15,20 +15,13 @@ def light_sensor():
     return v
 
 if __name__ == '__main__':
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         light = round(light_sensor(), 2)
         reported['state']['reported']['light'] = light
 
         print(ujson.dumps(reported))
-        cli.request_post(path, ujson.dumps(reported))
+        degu.update_shadow(ujson.dumps(reported))
         time.sleep(1)
-
-        cli.close()

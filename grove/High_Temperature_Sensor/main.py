@@ -1,8 +1,7 @@
 from machine import ADC
-from math import log
 from utime import sleep
 import ujson
-import zcoap
+import degu
 
 class Temperature:
     def __init__(self, port):
@@ -47,24 +46,18 @@ class Temperature:
         return value
          
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
     temp = Temperature(0)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['temp'] = temp.read()
 
         json = ujson.dumps(reported)
-        cli.request_post(path, json)
+        degu.update_shadow(json)
         print(json)
         sleep(60)
-        cli.close()
 
 if __name__ == "__main__":
     main()

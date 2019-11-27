@@ -1,5 +1,5 @@
 import time
-import zcoap
+import degu
 import ujson
 from ustruct import unpack, unpack_from
 from array import array
@@ -177,7 +177,6 @@ class BME280:
                 "{}.{:02d}".format(hi, hd))
                 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
@@ -185,17 +184,13 @@ def main():
     bme = BME280(i2c=bus)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['temp'] = bme.values[0]
         reported['state']['reported']['pres'] = bme.values[1]
         reported['state']['reported']['humid'] = bme.values[2]
 
         print(ujson.dumps(reported))
-        cli.request_post(path, ujson.dumps(reported))
+        degu.update_shadow(ujson.dumps(reported))
         time.sleep(60)
-        cli.close()
+
 if __name__ == "__main__":
     main()
