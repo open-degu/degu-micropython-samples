@@ -16,9 +16,9 @@ if __name__ == '__main__':
     while True:
         reported['state']['reported']['message'] = 'OK'
         print(ujson.dumps(reported))
-        degu.request_post(ujson.dumps(reported))
+        degu.update_shadow(ujson.dumps(reported))
 
-        received = degu.request_get()
+        received = degu.update_shadow()
 
         if received:
             led1.on()
