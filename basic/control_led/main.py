@@ -15,9 +15,9 @@ def main():
 
         reported['state']['reported']['led'] = led_status
 
-        degu.request_post(ujson.dumps(reported))
+        degu.update_shadow(ujson.dumps(reported))
 
-        received = degu.update_shadow()
+        received = degu.get_shadow()
         if received:
             try:
                 desired = ujson.loads(received)

@@ -18,7 +18,7 @@ if __name__ == '__main__':
         print(ujson.dumps(reported))
         degu.update_shadow(ujson.dumps(reported))
 
-        received = degu.update_shadow()
+        received = degu.get_shadow()
 
         if received:
             led1.on()
