@@ -1,28 +1,23 @@
 import time
-import zcoap
+import degu
 import ujson
 from machine import Pin
 from machine import Signal
 
 def main():
-    path = 'thing/' + zcoap.eui64()
-    reported = {'state':{'reported':{}}}
-
-    addr = zcoap.gw_addr()
-    port = 5683
-    cli = zcoap.client((addr, port))
-
     pin = Pin(('GPIO_1', 5), Pin.OUT)
     led = Signal(pin, invert=True)
     led.off()
     led_status = 'OFF'
 
     while True:
+        reported = {'state': {'reported': {}}}
+
         reported['state']['reported']['led'] = led_status
 
-        cli.request_post(path, ujson.dumps(reported))
+        degu.request_post(ujson.dumps(reported))
 
-        received = cli.request_get(path)
+        received = degu.update_shadow()
         if received:
             try:
                 desired = ujson.loads(received)
@@ -38,8 +33,6 @@ def main():
                 pass
 
         time.sleep(1)
-
-    cli.close()
 
 if __name__ == "__main__":
     main()
