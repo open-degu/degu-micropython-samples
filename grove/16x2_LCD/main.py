@@ -1,5 +1,7 @@
 from machine import I2C
 from time import sleep
+import ujson
+import degu
 
 
 class LCD:
@@ -37,21 +39,54 @@ def main():
         padded_string = (string + ' ' * length)[0:length]
         return padded_string[1:] + padded_string[0]
 
+    def max(array):  # Micropython doesn't implement max()
+        acc = array[0]
+        for x in array[1:]:
+            if acc < x:
+                acc = x
+        return acc
+
     lcd = LCD()
 
-    hello = 'Hello, world!'
-    demo = 'This is a grove LCD demo!'
-    demo_length = len(demo)
+    string_top = 'Hello, world!'
+    string_bottom = 'This is a grove LCD demo!'
+    rotated_top = string_top
+    rotated_bottom = string_bottom
+    top_length = max([16, len(string_top)])
+    bottom_length = max([16, len(string_bottom)])
+
+    update_frequency = 10
 
     while True:
-        lcd.cls()
-        lcd.show_ascii(hello)
-        lcd.newline()
-        lcd.show_ascii(demo[0:16])
-        sleep(0.5)
+        shadow = ujson.loads(degu.get_shadow())
+        if ('state' in shadow
+           and 'reported' in shadow['state']
+           and 'lcd' in shadow['state']['reported']):
+            reported = shadow['state']['reported']['lcd']
 
-        hello = rotate_string(hello, 16)
-        demo = rotate_string(demo, demo_length + 2)
+            if ('string_top' in reported
+               and reported['string_top'] != string_top):
+                string_top = reported['string_top']
+                rotated_top = string_top
+                top_length = max([16, len(string_top)])
+
+            if ('string_bottom' in reported
+               and reported['string_bottom'] != string_bottom):
+                string_bottom = reported['string_bottom']
+                rotated_bottom = string_bottom
+                bottom_length = max([16, len(string_bottom)])
+
+        for i in range(update_frequency):
+            lcd.cls()
+            lcd.show_ascii(rotated_top[0:16])
+            lcd.newline()
+            lcd.show_ascii(rotated_bottom[0:16])
+
+            if i != update_frequency - 1:  # Reduces the lag of transmission
+                sleep(0.5)
+
+            rotated_top = rotate_string(rotated_top, top_length + 1)
+            rotated_bottom = rotate_string(rotated_bottom, bottom_length + 1)
 
 
 if __name__ == '__main__':
