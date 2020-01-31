@@ -1,6 +1,6 @@
 from machine import Pin
 from utime import sleep
-import zcoap
+import degu
 import ujson
 
 
@@ -22,22 +22,16 @@ class PiezoVibration:
 
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state': {'reported': {}}}
 
     vibration = PiezoVibration(0)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['vibration'] = vibration.detect()
         json = ujson.dumps(reported)
-        cli.request_post(path, json)
+        degu.update_shadow(json)
         print(json)
         sleep(1)
-        cli.close()
 
 
 if __name__ == "__main__":

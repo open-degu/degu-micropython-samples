@@ -1,5 +1,5 @@
 from machine import ADC
-import zcoap
+import degu
 import time
 import ujson
 
@@ -19,19 +19,11 @@ def battery_voltage():
     return v
 
 if __name__ == '__main__':
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
-
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['battery'] = battery_voltage()
 
         print(ujson.dumps(reported))
-        cli.request_post(path, ujson.dumps(reported))
+        degu.update_shadow(ujson.dumps(reported))
         time.sleep(60)
-
-        cli.close()

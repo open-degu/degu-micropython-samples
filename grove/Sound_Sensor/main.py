@@ -1,7 +1,7 @@
 from machine import ADC
 from utime import sleep
 import ujson
-import zcoap
+import degu
 
 
 class Loudness:
@@ -26,23 +26,17 @@ class Loudness:
 
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state': {'reported': {}}}
 
     loudness = Loudness(0)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['loudness'] = loudness.read()
 
         json = ujson.dumps(reported)
-        cli.request_post(path, json)
+        degu.update_shadow(json)
         print(json)
         sleep(30)
-        cli.close()
 
 
 if __name__ == "__main__":

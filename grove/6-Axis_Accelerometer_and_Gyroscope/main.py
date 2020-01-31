@@ -1,8 +1,7 @@
 import time
-import zcoap
+import degu
 import ujson
 from machine import I2C
-from sys import exit
 
 #create an i2c on bus 1
 i2c = I2C(1)
@@ -155,24 +154,18 @@ class LSM6DS3:
         time.sleep_us(10)
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
     lsm6ds3 = LSM6DS3(0x6A, True, True) #device_addr, accel_mode, gyros_mode
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['accel'] = lsm6ds3.accel_start()
         reported['state']['reported']['gyro'] = lsm6ds3.gyros_start()
 
         print(ujson.dumps(reported))
-        cli.request_post(path, ujson.dumps(reported))
+        degu.update_shadow(ujson.dumps(reported))
         time.sleep(5)
-        cli.close()
 
 if __name__ == "__main__":
     main()

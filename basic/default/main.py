@@ -1,12 +1,11 @@
 from machine import Pin
 from machine import Signal
 from machine import ADC
-import zcoap
+import degu
 import time
 import ujson
 
 if __name__ == '__main__':
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
@@ -15,19 +14,13 @@ if __name__ == '__main__':
     led1.off()
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['message'] = 'OK'
         print(ujson.dumps(reported))
-        cli.request_post(path, ujson.dumps(reported))
+        degu.update_shadow(ujson.dumps(reported))
 
-        received = cli.request_get(path)
+        received = degu.get_shadow()
 
         if received:
             led1.on()
 
         time.sleep(5)
-
-        cli.close()

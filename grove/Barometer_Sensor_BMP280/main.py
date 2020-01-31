@@ -1,5 +1,5 @@
 import time
-import zcoap
+import degu
 import ujson
 from ustruct import unpack, unpack_from
 from array import array
@@ -173,7 +173,6 @@ class BMP280:
         return (t / 100, p / 100, h / 100)
                 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
@@ -181,17 +180,12 @@ def main():
     bmp = BMP280(i2c=bus)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['temp'] = bmp.values[0]
         reported['state']['reported']['pres'] = bmp.values[1]
 
         print(ujson.dumps(reported))
-        cli.request_post(path, ujson.dumps(reported))
+        degu.update_shadow(ujson.dumps(reported))
         time.sleep(60)
-        cli.close()
 
 if __name__ == "__main__":
     main()

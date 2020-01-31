@@ -1,6 +1,6 @@
 from machine import I2C
 from time import sleep
-import zcoap
+import degu
 import ujson
 from ustruct import unpack
 
@@ -32,14 +32,9 @@ class CO2:
 
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state': {'reported': {}}}
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         co2 = CO2()
 
         concentration = co2.getConcentration()
@@ -50,10 +45,9 @@ def main():
         }
 
         json = ujson.dumps(reported)
-        cli.request_post(path, json)
+        degu.update_shadow(json)
         print(json)
         sleep(60)
-        cli.close()
 
 
 if __name__ == "__main__":

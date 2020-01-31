@@ -1,6 +1,6 @@
 from machine import I2C
 from time import sleep
-import zcoap
+import degu
 import ujson
 
 
@@ -50,16 +50,11 @@ class ColorSensor:
 
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state': {'reported': {}}}
 
     colorSensor = ColorSensor()
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         color = colorSensor.readColor()
         reported['state']['reported']['color'] = {
             'red': color[0],
@@ -68,10 +63,9 @@ def main():
         }
 
         json = ujson.dumps(reported)
-        cli.request_post(path, json)
+        degu.update_shadow(json)
         print(json)
         sleep(60)
-        cli.close()
 
 
 if __name__ == "__main__":

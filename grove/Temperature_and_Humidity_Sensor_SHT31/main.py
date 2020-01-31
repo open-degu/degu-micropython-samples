@@ -1,5 +1,5 @@
 import time
-import zcoap
+import degu
 import ujson
 from machine import I2C
 
@@ -50,7 +50,6 @@ class SHT31(object):
         return temp, 100 * (h / 65535)
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
@@ -58,19 +57,14 @@ def main():
     sht31 = SHT31(i2c=bus)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         values = sht31.get_temp_humi()
 
         reported['state']['reported']['temp'] = values[0]
         reported['state']['reported']['humid'] = values[1]
 
         print(ujson.dumps(reported))
-        cli.request_post(path, ujson.dumps(reported))
+        degu.update_shadow(ujson.dumps(reported))
         time.sleep(60)
-        cli.close()
 
 if __name__ == "__main__":
     main()

@@ -1,6 +1,6 @@
 from machine import Pin
 from utime import ticks_ms, sleep
-import zcoap
+import degu
 import ujson
 
 class Vibration:
@@ -26,26 +26,20 @@ class Vibration:
         return result
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
     vib = Vibration(0)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['vibration'] = "not detected"
         for i in range(100):
             if vib.detect():
                 reported['state']['reported']['detected'] = "detected"
             sleep(0.01)
         json = ujson.dumps(reported)
-        cli.request_post(path, json)
+        degu.update_shadow(json)
         print(json)
-        cli.close()
 
 if __name__ == "__main__":
     main()

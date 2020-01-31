@@ -1,6 +1,6 @@
 from machine import ADC
 from time import sleep
-import zcoap
+import degu
 import ujson
 
 class Current:
@@ -21,24 +21,18 @@ class Current:
         return currentSum / 100
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
 
 
     current = Current(0)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['current'] = current.read()
 
         json = ujson.dumps(reported)
-        cli.request_post(path, json)
+        degu.update_shadow(json)
         print(json)
         sleep(1)
-        cli.close()
 
 if __name__ == "__main__":
     main()

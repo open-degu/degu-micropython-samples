@@ -1,8 +1,7 @@
 import time
-import zcoap
+import degu
 import ujson
 import machine
-from sys import exit
 
 i2c = machine.I2C(1)
 
@@ -61,23 +60,17 @@ class MMC7660:
         return {'x': x, 'y': y, 'z': z}
 
 def main():
-    path = 'thing/' + zcoap.eui64()
     reported = {'state':{'reported':{}}}
-
 
     mmc7660 = MMC7660(MMC7660_I2CADDR)
 
     while True:
-        addr = zcoap.gw_addr()
-        port = 5683
-        cli = zcoap.client((addr, port))
-
         reported['state']['reported']['axis'] = mmc7660.getAxes()
 
-        print(ujson.dumps(reported))
-        cli.request_post(path, ujson.dumps(reported))
+        json = ujson.dumps(reported)
+        print(json)
+        degu.update_shadow(json)
         time.sleep(5)
-        cli.close()
 
 if __name__ == "__main__":
     main()
